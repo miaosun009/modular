@@ -254,6 +254,8 @@ class ModularRouterDelegate extends RouterDelegate<ModularBook>
   @override
   String get path => currentConfiguration?.uri.toString() ?? '/';
 
+  String get title => currentConfiguration?.title ?? '';
+
   @override
   Future<T?> push<T extends Object?>(Route<T> route) async {
     return await navigatorKey.currentState?.push<T>(route);

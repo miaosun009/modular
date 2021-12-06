@@ -8,6 +8,7 @@ class ChildRoute<T> extends ParallelRoute<T> {
   ChildRoute(
     String name, {
     required ModularChild child,
+    String title='',
     CustomTransition? customTransition,
     List<ParallelRoute> children = const [],
     Duration? duration,
@@ -18,6 +19,7 @@ class ChildRoute<T> extends ParallelRoute<T> {
             'Don\'t use name "/" in route\'s children when parent be "/" too'),
         super(
           name: name,
+          title: title,
           child: child,
           customTransition: customTransition,
           children: children,

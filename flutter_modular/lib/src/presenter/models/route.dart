@@ -33,6 +33,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
     required String name,
     this.popCallback,
     String parent = '',
+    String title = '',
     String schema = '',
     this.transition,
     this.customTransition,
@@ -45,6 +46,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
     Map<Type, BindContext> bindContextEntries = const {},
   }) : super(
           name: name,
+          title: title,
           parent: parent,
           schema: schema,
           children: children,
@@ -57,6 +59,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
   factory ParallelRoute.child(
     String name, {
     required ModularChild child,
+    String title='',
     CustomTransition? customTransition,
     List<ParallelRoute> children = const [],
     Duration? duration,
@@ -66,6 +69,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
     return ParallelRoute<T>(
       child: child,
       name: name,
+      title: title,
       children: children,
       customTransition: customTransition,
       transition: transition,
@@ -103,6 +107,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
     CustomTransition? customTransition,
     Duration? duration,
     String? name,
+    String? title,
     String? schema,
     void Function(dynamic)? popCallback,
     List<Middleware>? middlewares,
@@ -119,6 +124,7 @@ class ParallelRoute<T> extends ModularRouteImpl {
       customTransition: customTransition ?? this.customTransition,
       duration: duration ?? this.duration,
       name: name ?? this.name,
+      title: title ?? this.title,
       schema: schema ?? this.schema,
       popCallback: popCallback ?? this.popCallback,
       middlewares: middlewares ?? this.middlewares,

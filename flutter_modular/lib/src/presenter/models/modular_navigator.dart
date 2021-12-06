@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class IModularNavigator implements Listenable {
   ///  Actual path
   String get path;
+  String get title;
 
   /// Navigate to a new screen.
   ///

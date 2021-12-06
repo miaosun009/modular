@@ -2,6 +2,7 @@ import 'package:modular_interfaces/modular_interfaces.dart';
 
 abstract class ModularRouteImpl implements ModularRoute {
   final String name;
+  final String title;
   final String schema;
   final String parent;
   final List<ModularRoute> children;
@@ -14,6 +15,7 @@ abstract class ModularRouteImpl implements ModularRoute {
   ModularRouteImpl({
     required this.name,
     this.parent = '',
+    this.title = '',
     this.schema = '',
     this.context,
     this.children = const [],
@@ -37,6 +39,7 @@ abstract class ModularRouteImpl implements ModularRoute {
 
   ModularRoute copyWith({
     String? name,
+    String? title,
     List<Middleware>? middlewares,
     List<ModularRoute>? children,
     String? parent,
