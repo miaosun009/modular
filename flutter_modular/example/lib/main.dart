@@ -19,7 +19,7 @@ class AppModule extends Module {
           '/setting',
           title: "Setting Page",
           child: (c, a) => SettingPage(),
-        )
+        ),
       ];
 }
 
@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      navigatorObservers: [Observer()],
     ).modular();
   }
 }
@@ -61,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    print(Modular.to.title);
     Modular.to.pushNamed('/setting');
   }
 
@@ -141,12 +141,5 @@ class SettingPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class Observer extends NavigatorObserver {
-  @override
-  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    print(route.settings);
   }
 }

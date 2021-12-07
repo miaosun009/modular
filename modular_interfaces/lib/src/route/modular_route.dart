@@ -8,9 +8,6 @@ import 'route_context.dart';
 abstract class ModularRoute {
   /// name of route
   String get name;
-
-  String get title;
-
   /// schema of route
   /// default is ''
   String get schema;

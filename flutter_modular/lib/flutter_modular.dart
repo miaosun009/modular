@@ -30,6 +30,7 @@ export 'src/presenter/widgets/navigation_listener.dart';
 export 'src/presenter/widgets/widget_module.dart';
 export 'src/presenter/navigation/transitions/page_transition.dart';
 export 'src/presenter/navigation/transitions/transitions.dart';
+export 'src/presenter/navigation/modular_page.dart';
 export 'package:modular_core/modular_core.dart'
     show ModularRoute, Disposable, ReassembleMixin;
 

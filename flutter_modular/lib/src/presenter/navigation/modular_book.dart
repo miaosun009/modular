@@ -8,7 +8,8 @@ import 'package:flutter_modular/src/presenter/navigation/modular_page.dart';
 class ModularBook {
   final List<ParallelRoute> routes;
   Uri get uri => routes.isEmpty ? Uri.parse('/') : routes.last.uri;
-  String get title => routes.isEmpty ? '' : routes.last.title;
+
+  String get title => routes.last.title;
 
   ModularBook({required this.routes});
 

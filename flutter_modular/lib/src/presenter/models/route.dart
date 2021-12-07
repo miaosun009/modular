@@ -25,6 +25,8 @@ class ParallelRoute<T> extends ModularRouteImpl {
   /// Default is 300 milliseconds
   final Duration? duration;
 
+  final String title;
+
   @internal
   final void Function(dynamic)? popCallback;
 
@@ -32,8 +34,8 @@ class ParallelRoute<T> extends ModularRouteImpl {
     this.child,
     required String name,
     this.popCallback,
+    this.title='',
     String parent = '',
-    String title = '',
     String schema = '',
     this.transition,
     this.customTransition,
@@ -46,7 +48,6 @@ class ParallelRoute<T> extends ModularRouteImpl {
     Map<Type, BindContext> bindContextEntries = const {},
   }) : super(
           name: name,
-          title: title,
           parent: parent,
           schema: schema,
           children: children,
@@ -118,13 +119,13 @@ class ParallelRoute<T> extends ModularRouteImpl {
     Map<Type, BindContext>? bindContextEntries,
   }) {
     return ParallelRoute<T>(
+      title: title ?? this.title,
       child: child ?? this.child,
       transition: transition ?? this.transition,
       context: context ?? this.context,
       customTransition: customTransition ?? this.customTransition,
       duration: duration ?? this.duration,
       name: name ?? this.name,
-      title: title ?? this.title,
       schema: schema ?? this.schema,
       popCallback: popCallback ?? this.popCallback,
       middlewares: middlewares ?? this.middlewares,

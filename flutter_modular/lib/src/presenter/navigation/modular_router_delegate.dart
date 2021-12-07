@@ -254,6 +254,7 @@ class ModularRouterDelegate extends RouterDelegate<ModularBook>
   @override
   String get path => currentConfiguration?.uri.toString() ?? '/';
 
+  @override
   String get title => currentConfiguration?.title ?? '';
 
   @override
